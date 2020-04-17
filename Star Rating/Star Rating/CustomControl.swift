@@ -34,14 +34,19 @@ class CustomControl: UIControl {
             label.tag = counter
             label.font = UIFont(name: "bold system font", size: 32.0)
             label = UILabel(frame: CGRect(x: starSpace, y: 0.0, width: componentDimension, height: componentDimension))
-            label.text = "⭐️"
+            label.text = "\u{2606}"
             label.textAlignment = .center
             labelArray.append(label)
             addSubview(labelArray[counter])
             counter += 1
             starSpace += (componentDimension + 8.0)
         } while counter != labelTotal
-        
+    
+            for colors in labelArray{
+                colors.textColor = componentInactiveColor
+            }
+            labelArray[0].textColor = componentActiveColor
+
                 
     }
     
